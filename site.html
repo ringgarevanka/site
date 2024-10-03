@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ringga Revanka | Personal Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for blur effects */
+        .blur-effect {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hamburger Menu */
+        .menu-mobile {
+            display: none;
+        }
+
+        /* Blur effect on header and hamburger */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Navbar stays on top */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-desktop {
+                display: none;
+            }
+
+            .menu-mobile {
+                display: block;
+            }
+
+            .menu-mobile ul {
+                display: none;
+                position: absolute;
+                top: 4rem;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.8);
+                padding: 1rem;
+                z-index: 10;
+            }
+
+            .menu-mobile ul.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900">
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4">
+            <h1 class="text-2xl text-white font-semibold">Ringga.</h1>
+            <div class="menu-desktop">
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="#home" class="text-white hover:text-red-500">Home</a></li>
+                        <li><a href="#about" class="text-white hover:text-red-500">About</a></li>
+                        <li><a href="#skills" class="text-white hover:text-red-500">Skills</a></li>
+                        <li><a href="#blog" class="text-white hover:text-red-500">Blog</a></li>
+                        <li><a href="#contact" class="text-white hover:text-red-500">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Mobile Menu (Hamburger) -->
+            <div class="menu-mobile">
+                <button id="hamburger" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <ul id="mobile-menu" class="space-y-4">
+                    <li><a href="#home" class="text-white">Home</a></li>
+                    <li><a href="#about" class="text-white">About</a></li>
+                    <li><a href="#skills" class="text-white">Skills</a></li>
+                    <li><a href="#blog" class="text-white">Blog</a></li>
+                    <li><a href="#contact" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover bg-center h-screen flex items-center justify-center text-white" style="background-image: url('https://r4.wallpaperflare.com/wallpaper/189/854/571/anime-landscape-anime-art-painting-sea-wallpaper-18062db8d0b08c48105c01ee3892148a.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold">Hello 👋, I'm Ringga Revanka</h2>
+            <p class="mt-4 text-xl">I am a developer, gamer and content creator, Welcome to my personal website!</p>
+            <a href="#about" class="mt-6 inline-block px-6 py-3 bg-red-600 text-white rounded-full hover:bg-red-700">Learn more</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-black text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-semibold">About me</h3>
+            <p class="mt-4 text-lg">I am a developer, gamer and content creator. Btw I also like Anime.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-semibold">Skills</h3>
+            <div class="mt-8">
+                <div class="mb-4">
+                    <p class="text-left font-semibold">HTML & CSS</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-red-600 h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="text-left font-semibold">JavaScript</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-red-600 h-2.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="text-left font-semibold">Bash/Shell</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-red-600 h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-black text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-semibold">Blog and Projects</h3>
+            <div class="mt-8 space-y-6">
+                <div class="p-6 bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                    <h4 class="text-xl font-semibold">Article: Hello World.</h4>
+                    <p class="mt-2 text-gray-300">Hello World...</p>
+                    <a href="#" class="mt-4 inline-block text-red-500">Read more</a>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                    <h4 class="text-xl font-semibold">Project: Link In Bio</h4>
+                    <p class="mt-2 text-gray-300">Link In Bio Using HTML, CSS, And JavaScript...</p>
+                    <a href="https://ringgarevanka.github.io/Link" class="mt-4 inline-block text-red-500">Open Site</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-red-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-semibold">Contact Me</h3>
+            <p class="mt-4 text-lg">If you want to collaborate or have any questions, please contact me!</p>
+            <a href="mailto:" class="mt-6 inline-block px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800">Email Me [Inactive]</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Ringga Revanka. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        // Menu toggle on hamburger click
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking anywhere outside the menu
+        window.addEventListener('click', (event) => {
+            if (!event.target.closest('.menu-mobile') && !event.target.closest('#hamburger') && !event.target.closest('#mobile-menu')) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking on a menu item
+        const menuLinks = document.querySelectorAll('#mobile-menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

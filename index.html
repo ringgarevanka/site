@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.1/dist/sweetalert2.all.min.js"></script>
+
+    <!-- Tailwind CSS CDN for responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Default Light Theme */
+        body {
+            background-color: #ffffff; /* Light background */
+            color: #000000; /* Light text */
+            font-family: sans-serif;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        /* Dark Mode Styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a202c; /* Dark background */
+                color: #ffffff; /* Dark text */
+            }
+        }
+
+        /* Ensuring the page is scrollable and properly adjusted */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // Function to display SweetAlert2
+    function showAlert() {
+        Swal.fire({
+            title: 'Page Under Development',
+            text: 'You will be redirected to a site that is still under development, it may have bugs/errors in the display. Do you want to continue?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, continue',
+            cancelButtonText: 'No, stay here',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Show success message with no button
+                Swal.fire({
+                    title: 'Redirecting...',
+                    icon: 'success',
+                    showConfirmButton: false, // No button
+                    timer: 500 // Wait for 0.5 seconds before redirecting
+                }).then(() => {
+                    // After the success message disappears, redirect
+                    window.location.href = "https://ringgarevanka.github.io/site/site.html";
+                });
+            }
+            // If canceled, no further action is taken
+        });
+    }
+
+    // Automatically show the alert on page load (for demonstration)
+    window.onload = function() {
+        showAlert();
+    };
+</script>
+
+</body>
+</html>
